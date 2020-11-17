@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <MENU>
-    <VER date="09.11.2020">1.53</VER>
+    <VER date="15.10.2020">1.50</VER>
 
     <!--
             <ITEM title="название" link="ссылка" {create="ссылка на создание"}>
@@ -25,21 +25,16 @@
 
         <ITEM title="Реестр устных и платных броней" link="spa/office/reserve/report">
             <A>APARTMENT_RESERVE</A>
-            <A>MANAGE_RESERVES</A>
-            <A>RESERVES_ALL</A>
             <OPTION name="description"/>
 
             <GROUP title="">
 
                 <ITEM title="Общий реестр" link="spa/office/reserve/report">
                     <A>APARTMENT_RESERVE</A>
-                    <A>MANAGE_RESERVES</A>
-                    <A>RESERVES_ALL</A>
                 </ITEM>
 
                 <ITEM title="Продление брони" link="spa/office/reserve/resprolong" acebypass="1">
                     <A>APARTMENT_RESERVE</A>
-                    <A>REPORT_RES_PROLONG</A>
                     <OPTION name="description"></OPTION>
                 </ITEM>
 
@@ -48,26 +43,20 @@
 
         </ITEM>
 
-        <ITEM title="Договоры бронирования" link="spa/office/reslists/" create="spa/office/reslists/?create=true">
-            <A>APPROVAL_LIST</A>
+        <ITEM title="Договоры бронирования" link="spa/office/reslists/" create="spa/office/reslists/#new">
             <A>APARTMENT_RESERVE</A>
-            <A>RESLIST_FULL</A>
             <OPTION name="create_tooltip">Создать договор бронирования</OPTION>
             <OPTION name="description"/>
             <A type="create" access="create">APARTMENT_RESERVE</A>
 
             <GROUP title="">
 
-                <ITEM title="Текущие" link="spa/office/reslists/">
-                    <A>APPROVAL_LIST</A>
+                <ITEM title="Текущие" link="spa/office/reslists/#tab1">
                     <A>APARTMENT_RESERVE</A>
-                    <A>RESLIST_FULL</A>
                 </ITEM>
 
-                <ITEM title="Архив" link="spa/office/reslists/archive">
+                <ITEM title="Архив" link="spa/office/reslists/#tab2">
                     <A>APARTMENT_RESERVE</A>
-                    <A>MANAGE_RESERVES</A>
-                    <A>RESERVES_ALL</A>
                 </ITEM>
 
             </GROUP>
@@ -93,11 +82,6 @@
             <OPTION name="create_tooltip">Создать контрагента</OPTION>
             <OPTION name="description"/>
             <A type="create" access="create">CONTRACTORS</A>
-        </ITEM>
-
-       <ITEM title="Расписание показов" link="spa/registry/spaceshow">
-            <A>SPACE_SHOW</A>
-            <OPTION name="description"/>
         </ITEM>
 
     </GROUP>
@@ -151,7 +135,7 @@
     <GROUP title="Управление">
 
         <ITEM title="Управление объектами" link="spa/building/buildadmin/">
-            <A>BUILDINGS_MANAGER</A>
+            <A access="create">BUILDING</A>
             <OPTION name="description"/>
         </ITEM>
 
@@ -179,7 +163,7 @@
                 </ITEM>
 
                 <ITEM title="Доход от адаптивного ценообразования" link="spa/sales/raiseprofit/">
-                    <A>PRICECFG</A>
+                    <A>REPORTS</A>
                 </ITEM>
 
             </GROUP>
@@ -196,28 +180,24 @@
             <OPTION name="description"/>
         </ITEM>
 
-        <ITEM title="Акции" link="spa/registry/promos/" create="spa/registry/promos/?create=true">
+        <ITEM title="Акции" link="spa/registry/promos/" create="spa/registry/promos/#create">
             <A>PROMO_MAKE</A>
-            <A>PROMO_APPLY</A>
             <OPTION name="create_tooltip">Создать акцию</OPTION>
             <OPTION name="description"/>
             <A type="create" access="create">PROMO_MAKE</A>
 
             <GROUP title="">
 
-                <ITEM title="Реестр акций" link="spa/registry/promos/">
+                <ITEM title="Реестр акций" link="spa/registry/promos/#tab1">
                     <A>PROMO_MAKE</A>
-                    <A>PROMO_APPLY</A>
                 </ITEM>
 
                 <ITEM title="Реестр назначенных акций" link="spa/registry/boundpromo">
-                    <A>PROMO_MAKE</A>
                     <A>PROMO_APPLY</A>
                 </ITEM>
 
-                <ITEM title="Архив акций" link="spa/registry/promos/archive">
+                <ITEM title="Архив акций" link="spa/registry/promos/?tab=ARCHIVE">
                     <A>PROMO_MAKE</A>
-                    <A>PROMO_APPLY</A>
                 </ITEM>
 
                 <ITEM title="Массовое назначение акций" link="spa/registry/boundpromo?createPromo=true">
@@ -282,7 +262,6 @@
 
         <ITEM title="Продление брони" link="spa/office/reserve/resprolong" acebypass="1">
             <A>APARTMENT_RESERVE</A>
-            <A>REPORT_RES_PROLONG</A>
             <OPTION name="description">Количество и срок продлений платных броней</OPTION>
         </ITEM>
 
@@ -292,9 +271,8 @@
         </ITEM>
 
         <ITEM title="Конфигуратор отчетов по КС" link="spa/registry/dealcards/configurator/configs" acebypass="1">
-            <A>DEALCARD_FULL</A>
-            <A>MANAGER</A>
-            <A>DEALCARD_SEARCH</A>
+            <A>DEALCARD</A>
+            <A>REG_AGENT</A>
             <OPTION name="description">Инструмент для создания индивидуальных видов отчетов по данным из сделок</OPTION>
             <OPTION name="border">blue</OPTION>
         </ITEM>
@@ -441,7 +419,7 @@
 
         </ITEM>
 
-
+        <!-- Сплошнов -->
         <SEPARATOR title="Финансы"/>
 
         <ITEM title="Финансовая сводка" link="office/finance/" acebypass="1">
@@ -635,13 +613,13 @@
             <OPTION name="description"/>
         </ITEM>
 
-        <ITEM title="Справочники" link="spa/manage/square/">
+        <ITEM title="Справочники" link="manage/square/">
             <A>DICT</A>
             <OPTION name="description"/>
 
             <GROUP title="">
 
-                <ITEM title="Площадь" link="spa/manage/square/">
+                <ITEM title="Площадь" link="manage/square/">
                     <A>DICT</A>
                     <OPTION name="description"/>
                 </ITEM>
@@ -686,13 +664,8 @@
                     <OPTION name="description"/>
                 </ITEM>
 
-                <ITEM title="Конфигуратор платной брони" link="spa/manage/rescost/">
+                <ITEM title="Конфигуратор платной брони" link="manage/rescost/">
                     <A>DICT</A>
-                    <OPTION name="description"/>
-                </ITEM>
-
-                <ITEM title="Время показов" link="spa/manage/spaceshow">
-                    <A>SPACE_SHOW</A>
                     <OPTION name="description"/>
                 </ITEM>
 
